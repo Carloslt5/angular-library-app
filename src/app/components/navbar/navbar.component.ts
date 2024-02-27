@@ -1,10 +1,13 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'navbar-component',
   standalone: true,
-  imports: [RouterLink],
+  imports: [NgOptimizedImage, RouterLink],
   templateUrl: './navbar.component.html',
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  navBarLogo = '/assets/library-icon.svg';
+}
