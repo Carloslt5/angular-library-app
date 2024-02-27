@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './library.component.html',
-  styleUrl: './library.component.css',
 })
 export class LibraryComponent {}
