@@ -1,18 +1,16 @@
-<nav class="bg-gray-800">
-  <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between py-2">
-      <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-        <div class="flex items-center gap-2">
-          <img width="32" height="32" [ngSrc]="navBarLogo" alt="Library App">
-          <p>Library App</p>
-        </div>
-        <div class="sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-            <a routerLink="/" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Home</a>
-            <a routerLink="/library" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Library</a>
-          </div>
-        </div>
+<div class="fixed flex items-center justify-center w-full bottom-8">
+  <nav class="p-2 rounded-md bg-antique-brass-500">
+
+    <div class="flex items-stretch justify-between gap-2">
+      <a routerLink="/" class="flex items-center gap-2 px-4 py-2 rounded-md bg-antique-brass-600 hover:bg-antique-brass-700">
+        <img width="32" height="32" [ngSrc]="navBarLogo" alt="Library App">
+        <p>Library App</p>
+      </a>
+      <div class="flex gap-2 rounded-md ">
+        <a routerLink="/library" class="btn-navBar">Library</a>
+        <a routerLink="/about" class="btn-navBar">About</a>
       </div>
     </div>
-  </div>
-</nav>
+
+  </nav>
+</div>

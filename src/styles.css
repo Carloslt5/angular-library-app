@@ -11,4 +11,8 @@
   .btn-primary {
     @apply px-3 py-2 mt-10 text-sm font-medium text-white rounded-md bg-antique-brass-500 hover:bg-antique-brass-600;
   }
+
+  .btn-navBar {
+    @apply flex items-center px-4 py-2 text-sm border rounded-md text-antique-brass-100 border-antique-brass-400 hover:border-antique-brass-100;
+  }
 }
