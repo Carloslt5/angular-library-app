@@ -1,7 +1,16 @@
-<section class="bg-red-300 bg-[url('/assets/bg_index.jpeg')] min-h-screen bg-cover">
-  <app-main-container>
-    <h1>HOLA HOME</h1>
-    <a routerLink="/library" class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">Library</a>
+<section class="flex items-center justify-center min-h-screen px-2 bg-cover bg-slate-500" [ngStyle]="{ 'background-image': 'url(' + bgImage + ')' }">
 
-  </app-main-container>
+  <div class="flex flex-col items-center justify-center p-6 rounded-md bg-antique-brass-700 bg-opacity-80 backdrop-blur-sm min-h-60">
+    <article class="flex flex-col items-center justify-center gap-6">
+      <header class="flex flex-col items-center">
+        <h1 class="text-3xl text-center font-display">Welcome to</h1>
+        <h1 class="text-6xl text-center font-display">Library App</h1>
+      </header>
+      <p class="text-center max-w-[70ch]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et diam in velit vehicula consectetur. Sed semper quis mi tempor tempor. Phasellus sodales leo vitae dui interdum, sit amet porta nisl mattis. In facilisis, enim a tincidunt ultricies. </p>
+    </article>
+    <a routerLink="/library" class="btn-primary">
+      View Library
+    </a>
+  </div>
+
 </section>

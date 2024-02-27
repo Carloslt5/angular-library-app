@@ -6,3 +6,9 @@
 :root {
   color-scheme: light dark;
 }
+
+@layer components {
+  .btn-primary {
+    @apply px-3 py-2 mt-10 text-sm font-medium text-white rounded-md bg-antique-brass-500 hover:bg-antique-brass-600;
+  }
+}
