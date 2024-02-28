@@ -1,3 +1,15 @@
-<h1 class="text-3xl font-bold underline">
-  Library works!
-</h1>
+<main-container>
+  <h1 class="text-3xl font-bold underline">
+    Library works!
+  </h1>
+
+  @if (bookList$ | async; as bookList) {
+  <ul>
+    @for (book of bookList; track book.id) {
+    <li>
+      {{book.title}}
+    </li>
+    }
+  </ul>
+  }
+</main-container>
