@@ -4,7 +4,7 @@
     "author": "Gabriel García Márquez",
     "categories": "Realismo mágico, Literatura Latinoamericana",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_1",
+    "link": "https://example.com/example-page",
     "title": "Cien años de soledad",
     "year": 1967
   },
@@ -13,7 +13,7 @@
     "author": "George Orwell",
     "categories": "Distopía, Ciencia Ficción",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_2",
+    "link": "https://example.com/example-page",
     "title": "1984",
     "year": 1949
   },
@@ -22,7 +22,7 @@
     "author": "Patrick Rothfuss",
     "categories": "Fantasía, Aventura",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_3",
+    "link": "https://example.com/example-page",
     "title": "El nombre del viento",
     "year": 2007
   },
@@ -31,7 +31,7 @@
     "author": "J.K. Rowling",
     "categories": "Fantasy, Young Adult",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_4",
+    "link": "https://example.com/example-page",
     "title": "Harry Potter and the Philosopher's Stone",
     "year": 1997
   },
@@ -40,7 +40,7 @@
     "author": "Harper Lee",
     "categories": "Fiction",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_5",
+    "link": "https://example.com/example-page",
     "title": "To Kill a Mockingbird",
     "year": 1960
   },
@@ -49,7 +49,7 @@
     "author": "F. Scott Fitzgerald",
     "categories": "Fiction, Classics",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_6",
+    "link": "https://example.com/example-page",
     "title": "The Great Gatsby",
     "year": 1925
   },
@@ -58,7 +58,7 @@
     "author": "Jane Austen",
     "categories": "Fiction, Romance",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_7",
+    "link": "https://example.com/example-page",
     "title": "Pride and Prejudice",
     "year": 1813
   },
@@ -67,7 +67,7 @@
     "author": "Gabriel García Márquez",
     "categories": "Realismo mágico, Literatura Latinoamericana",
     "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
-    "link": "Enlace_al_libro_8",
+    "link": "https://example.com/example-page",
     "title": "El amor en los tiempos del cólera",
     "year": 1985
   }
