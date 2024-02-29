@@ -1,8 +1,8 @@
-<p>book-details works!</p>
-
-<h1 class="text-white">{{bookID}}</h1>
-
 <main-container>
+  <h1 class="mb-6 text-2xl font-bold underline md:text-6xl">
+    Book Details
+  </h1>
+
   @if (bookData$ | async; as bookList) {
   @for (book of bookList; track book.id) {
   <book-card-details [bookDetails]="book" />

@@ -15,4 +15,5 @@
   .btn-navBar {
     @apply flex items-center px-4 py-2 text-sm border rounded-md text-antique-brass-100 border-antique-brass-400 hover:border-antique-brass-100;
   }
+
 }
