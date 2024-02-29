@@ -3,11 +3,13 @@ import { BookService } from '../../core/services/book.service';
 import { Observable } from 'rxjs';
 import { Book, BookID } from '../../interface/book';
 import { AsyncPipe } from '@angular/common';
+import { BookCardDetailsComponent } from '../../components/book-card-details/book-card-details.component';
+import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
 
 @Component({
   selector: 'book-details-page',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, MainContainerComponent, BookCardDetailsComponent],
   templateUrl: './book-details.component.html',
 })
 export class BookDetailsComponent implements OnInit {
