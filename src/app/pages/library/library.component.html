@@ -1,13 +1,13 @@
 <main-container>
-  <h1 class="text-3xl font-bold underline">
-    Library works!
+  <h1 class="mb-6 text-6xl font-bold underline">
+    Library
   </h1>
 
   @if (bookList$ | async; as bookList) {
-  <ul>
+  <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
     @for (book of bookList; track book.id) {
     <li>
-      {{book.title}}
+      <book-card [bookDetails]="book" />
     </li>
     }
   </ul>

@@ -3,7 +3,7 @@
     "id": "1",
     "author": "Gabriel García Márquez",
     "categories": "Realismo mágico, Literatura Latinoamericana",
-    "imageURL": "URL_de_la_imagen_1",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
     "link": "Enlace_al_libro_1",
     "title": "Cien años de soledad",
     "year": 1967
@@ -12,7 +12,7 @@
     "id": "2",
     "author": "George Orwell",
     "categories": "Distopía, Ciencia Ficción",
-    "imageURL": "URL_de_la_imagen_2",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
     "link": "Enlace_al_libro_2",
     "title": "1984",
     "year": 1949
@@ -21,9 +21,54 @@
     "id": "3",
     "author": "Patrick Rothfuss",
     "categories": "Fantasía, Aventura",
-    "imageURL": "URL_de_la_imagen_3",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
     "link": "Enlace_al_libro_3",
     "title": "El nombre del viento",
     "year": 2007
+  },
+  {
+    "id": "4",
+    "author": "J.K. Rowling",
+    "categories": "Fantasy, Young Adult",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
+    "link": "Enlace_al_libro_4",
+    "title": "Harry Potter and the Philosopher's Stone",
+    "year": 1997
+  },
+  {
+    "id": "5",
+    "author": "Harper Lee",
+    "categories": "Fiction",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
+    "link": "Enlace_al_libro_5",
+    "title": "To Kill a Mockingbird",
+    "year": 1960
+  },
+  {
+    "id": "6",
+    "author": "F. Scott Fitzgerald",
+    "categories": "Fiction, Classics",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
+    "link": "Enlace_al_libro_6",
+    "title": "The Great Gatsby",
+    "year": 1925
+  },
+  {
+    "id": "7",
+    "author": "Jane Austen",
+    "categories": "Fiction, Romance",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
+    "link": "Enlace_al_libro_7",
+    "title": "Pride and Prejudice",
+    "year": 1813
+  },
+  {
+    "id": "8",
+    "author": "Gabriel García Márquez",
+    "categories": "Realismo mágico, Literatura Latinoamericana",
+    "imageURL": "https://onhfqcltzuwwklasplnd.supabase.co/storage/v1/object/public/books/public/imageData-1708098904089-481096129",
+    "link": "Enlace_al_libro_8",
+    "title": "El amor en los tiempos del cólera",
+    "year": 1985
   }
 ]
