@@ -1,1 +1,11 @@
 <p>book-details works!</p>
+
+<h1 class="text-white">{{bookID}}</h1>
+
+@if (bookData$ | async; as data) {
+@for (book of data; track book.id) {
+<h1>{{book.title}}</h1>
+<h1>{{book.author}}</h1>
+<h1>{{book.link}}</h1>
+}
+}

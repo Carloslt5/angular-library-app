@@ -7,3 +7,5 @@ export interface Book {
   title: string;
   year: number;
 }
+
+export type BookID = Pick<Book, 'id'>;
