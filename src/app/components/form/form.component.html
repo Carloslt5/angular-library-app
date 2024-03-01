@@ -1,0 +1,29 @@
+<form class="flex flex-col w-full max-w-xl gap-4 p-4 mx-auto rounded-md bg-antique-brass-500">
+  <div class="relative z-0 w-full group">
+    <input type="text" name="title" class="form-input peer" placeholder=" " required />
+    <label for="title" class="form-label">Title</label>
+  </div>
+  <div class="relative z-0 w-full group">
+    <input type="text" name="author" class="form-input peer" placeholder=" " required />
+    <label for="author" class="form-label">Author</label>
+  </div>
+  <div class="relative z-0 w-full group">
+    <input type="url" name="link" class="form-input peer" placeholder=" " required />
+    <label for="link" class="form-label">Link Info</label>
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full group">
+      <input type="text" name="categorie" class="form-input peer" placeholder=" " required />
+      <label for="categorie" class="form-label">Categorie</label>
+    </div>
+    <div class="relative z-0 w-full group">
+      <input type="number" name="year" class="form-input peer cursor-text" placeholder=" " required min="0" max="2099" step="1" />
+      <label for="year" class="form-label">Year</label>
+    </div>
+  </div>
+  <div class="relative z-0 w-full group">
+    <label class="block mb-2 text-sm text-antique-brass-800" for="imageURL">Upload cover</label>
+    <input class="block w-full text-sm bg-transparent border rounded-md cursor-pointer text-antique-brass-50 border-antique-brass-950 focus:outline-none" type="file">
+  </div>
+  <button type="submit" class="self-end w-full mt-4 btn-primary md:w-fit">Submit</button>
+</form>

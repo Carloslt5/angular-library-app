@@ -9,11 +9,19 @@
 
 @layer components {
   .btn-primary {
-    @apply px-3 py-2 mt-10 text-sm font-medium text-white rounded-md bg-antique-brass-500 hover:bg-antique-brass-600;
+    @apply px-3 py-2 text-sm font-medium text-white rounded-md bg-antique-brass-700 hover:bg-antique-brass-800;
   }
 
   .btn-navBar {
     @apply flex items-center px-4 py-2 text-sm border rounded-md text-antique-brass-100 border-antique-brass-400 hover:border-antique-brass-100;
+  }
+
+  .form-input {
+    @apply block py-2.5 px-0 w-full text-antique-brass-50 bg-transparent border-0 border-b-2 border-antique-brass-700 appearance-none focus:outline-none focus:ring-0 focus:border-antique-brass-300;
+  }
+
+  .form-label {
+    @apply text-sm peer-focus:font-medium absolute text-antique-brass-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:dark:text-antique-brass-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
   }
 
 }
