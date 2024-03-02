@@ -1,29 +1,36 @@
-<form class="flex flex-col w-full max-w-xl gap-4 p-4 mx-auto rounded-md bg-antique-brass-500">
-  <div class="relative z-0 w-full group">
-    <input type="text" name="title" class="form-input peer" placeholder=" " required />
-    <label for="title" class="form-label">Title</label>
+<form class="flex flex-col max-w-3xl gap-4 p-4 mx-auto rounded-md aspect-video md:flex-row bg-antique-brass-500" [formGroup]="bookData" (ngSubmit)="sendForm($event)" enctype="multipart/form-data">
+  <div class="flex-1 hidden overflow-hidden rounded-md md:flex">
+    @if(bookData.value.imageURL){
+    <img src="{{bookData.value.imageURL.publicUrl}}" class="block object-cover w-full " alt="Uploaded cover image" />
+    }
   </div>
-  <div class="relative z-0 w-full group">
-    <input type="text" name="author" class="form-input peer" placeholder=" " required />
-    <label for="author" class="form-label">Author</label>
-  </div>
-  <div class="relative z-0 w-full group">
-    <input type="url" name="link" class="form-input peer" placeholder=" " required />
-    <label for="link" class="form-label">Link Info</label>
-  </div>
-  <div class="grid md:grid-cols-2 md:gap-6">
+  <article class="flex flex-col flex-1 gap-4 py-2">
     <div class="relative z-0 w-full group">
-      <input type="text" name="categorie" class="form-input peer" placeholder=" " required />
-      <label for="categorie" class="form-label">Categorie</label>
+      <input type="text" formControlName="title" class="form-input peer" placeholder=" " required />
+      <label for="title" class="form-label">Title</label>
     </div>
     <div class="relative z-0 w-full group">
-      <input type="number" name="year" class="form-input peer cursor-text" placeholder=" " required min="0" max="2099" step="1" />
-      <label for="year" class="form-label">Year</label>
+      <input type="text" formControlName="author" class="form-input peer" placeholder=" " required />
+      <label for="author" class="form-label">Author</label>
     </div>
-  </div>
-  <div class="relative z-0 w-full group">
-    <label class="block mb-2 text-sm text-antique-brass-800" for="imageURL">Upload cover</label>
-    <input class="block w-full text-sm bg-transparent border rounded-md cursor-pointer text-antique-brass-50 border-antique-brass-950 focus:outline-none" type="file">
-  </div>
-  <button type="submit" class="self-end w-full mt-4 btn-primary md:w-fit">Submit</button>
+    <div class="relative z-0 w-full group">
+      <input type="url" formControlName="link" class="form-input peer" placeholder=" " required />
+      <label for="link" class="form-label">Link Info</label>
+    </div>
+    <div class="flex flex-col gap-4 md:flex-row md:justify-between">
+      <div class="relative z-0 w-full group">
+        <input type="text" formControlName="categorie" class="form-input peer" placeholder=" " required />
+        <label for="categorie" class="form-label">Categorie</label>
+      </div>
+      <div class="relative z-0 w-full group">
+        <input type="number" formControlName="year" class="form-input peer cursor-text" placeholder=" " required min="0" max="2099" step="1" />
+        <label for="year" class="form-label">Year</label>
+      </div>
+    </div>
+    <div class="relative z-0 w-full mt-2 group">
+      <label class="block mb-2 text-sm text-antique-brass-800" for="imageURL">Upload cover</label>
+      <input (change)="uploadImg($event)" type="file" class="block w-full text-sm bg-transparent border rounded-md cursor-pointer text-antique-brass-50 border-antique-brass-950 focus:outline-none">
+    </div>
+    <button type="submit" class="self-end w-full mt-4 btn-primary md:w-fit">Submit</button>
+  </article>
 </form>
