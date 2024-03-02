@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,4 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
   navBarLogo = '/assets/library-icon.svg';
+  @Input() titleApp!: string;
 }

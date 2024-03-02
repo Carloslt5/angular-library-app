@@ -1,7 +1,8 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { BOOK_CATEGORIE_ARRAY } from '../../../constants/categories.constants';
 import { UploadService } from '../../core/services/upload.service';
-import { AsyncPipe } from '@angular/common';
 export interface UploadResponse {
   publicUrl: string;
 }
@@ -24,6 +25,8 @@ export class FormComponent implements OnInit {
     }),
     year: new FormControl(null),
   });
+
+  bookCategories = BOOK_CATEGORIE_ARRAY;
 
   constructor(private fileServices: UploadService) {}
 

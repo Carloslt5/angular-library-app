@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TITLE_APP } from '../constants/title-app.constant';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'angular-library-app';
+  title = TITLE_APP;
 }
