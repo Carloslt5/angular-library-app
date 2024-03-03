@@ -1,4 +1,4 @@
-export const BOOK_CATEGORIE_ARRAY = [
+export const BOOK_CATEGORY_ARRAY = [
   'Biography',
   'Fantasy',
   'Fiction',

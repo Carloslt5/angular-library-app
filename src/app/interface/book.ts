@@ -8,4 +8,8 @@ export interface Book {
   year: number;
 }
 
+export interface UploadResponse {
+  publicUrl: string;
+}
+
 export type BookID = Pick<Book, 'id'>;

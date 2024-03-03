@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UploadResponse } from '../../components/form/form.component';
+import { UploadResponse } from '../../interface/book';
 
 @Injectable({
   providedIn: 'root',

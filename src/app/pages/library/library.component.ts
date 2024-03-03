@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { BookService } from '../../core/services/book.service';
 import { AsyncPipe } from '@angular/common';
-import { Book } from '../../interface/book';
-import { Observable } from 'rxjs';
-import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
-import { BookCardComponent } from '../../components/book-card/book-card.component';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
+import { BookCardComponent } from '../../components/book-card/book-card.component';
+import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
+import { BookService } from '../../core/services/book.service';
+import { Book } from '../../interface/book';
 
 @Component({
   selector: 'library-page',

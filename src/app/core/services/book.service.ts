@@ -6,17 +6,22 @@ import { Book, BookID } from '../../interface/book';
   providedIn: 'root',
 })
 export class BookService {
+  private baseURL = 'http://localhost:5005/api/books';
   constructor(private http: HttpClient) {}
 
   getBooksList() {
-    return this.http.get<Book[]>('http://localhost:5005/api/books');
+    return this.http.get<Book[]>(this.baseURL);
   }
 
   getbyID(id: BookID) {
-    return this.http.get<Book[]>(`http://localhost:5005/api/books/${id}`);
+    return this.http.get<Book[]>(`${this.baseURL}/${id}`);
+  }
+
+  create(bookData: Partial<Book>) {
+    return this.http.post(`${this.baseURL}/create`, bookData);
   }
 
   deleteByID({ id }: BookID) {
-    return this.http.delete(`http://localhost:5005/api/books/${id}`);
+    return this.http.delete(`${this.baseURL}/${id}`);
   }
 }
