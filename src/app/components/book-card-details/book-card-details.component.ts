@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Book } from '../../interface/book';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Book, BookID } from '../../interface/book';
 
 @Component({
   selector: 'book-card-details',
@@ -9,6 +9,11 @@ import { Book } from '../../interface/book';
 })
 export class BookCardDetailsComponent {
   @Input() bookDetails!: Book;
+  @Output() deleteByID = new EventEmitter<BookID>();
 
   constructor() {}
+
+  onDelete() {
+    this.deleteByID.emit({ id: this.bookDetails.id });
+  }
 }

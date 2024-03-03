@@ -5,7 +5,7 @@
 
   @if (bookData$ | async; as bookList) {
   @for (book of bookList; track book.id) {
-  <book-card-details [bookDetails]="book" />
+  <book-card-details [bookDetails]="book" (deleteByID)="deleteByID($event)" />
   }
   }
 

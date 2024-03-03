@@ -15,4 +15,8 @@ export class BookService {
   getbyID(id: BookID) {
     return this.http.get<Book[]>(`http://localhost:5005/api/books/${id}`);
   }
+
+  deleteByID({ id }: BookID) {
+    return this.http.delete(`http://localhost:5005/api/books/${id}`);
+  }
 }
