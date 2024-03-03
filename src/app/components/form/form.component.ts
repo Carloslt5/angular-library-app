@@ -16,7 +16,7 @@ export class FormComponent {
   bookData = new FormGroup({
     title: new FormControl(''),
     author: new FormControl(''),
-    link: new FormControl('https://example.com/example-page'),
+    link: new FormControl(''),
     categories: new FormControl(''),
     imageURL: new FormControl(
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3DlrxkyG-D62QsmOFHoe_pCaaIIVWnItM6NMqtYqTsXNIpdB'
@@ -47,7 +47,6 @@ export class FormComponent {
 
   sendForm(event: Event) {
     event.preventDefault();
-    console.log('Formulario enviado:', this.bookData.value);
     this.bookService
       .create(this.bookData.value as Partial<Book>)
       .subscribe((response) => {
