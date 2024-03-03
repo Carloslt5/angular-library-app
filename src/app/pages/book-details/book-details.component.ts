@@ -18,6 +18,10 @@ export class BookDetailsComponent implements OnInit {
   constructor(private services: BookService) {}
 
   ngOnInit(): void {
+    this.getByID();
+  }
+
+  getByID() {
     this.bookData$ = this.services.getbyID(this.bookID);
   }
 }
