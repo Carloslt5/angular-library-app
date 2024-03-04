@@ -8,7 +8,6 @@ import { Book } from '../../interface/book';
   standalone: true,
   imports: [MainContainerComponent, FormComponent],
   templateUrl: './editbook.component.html',
-  styleUrl: './editbook.component.css',
 })
 export class EditbookComponent implements OnInit {
   bookDetails!: Book;
@@ -17,5 +16,9 @@ export class EditbookComponent implements OnInit {
 
   ngOnInit() {
     this.bookDetails = history.state.book;
+  }
+
+  sendForm(bookData: Partial<Book>) {
+    console.log('la data enviada', bookData);
   }
 }
