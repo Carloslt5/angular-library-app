@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book, BookID } from '../../interface/book';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'book-card-details',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './book-card-details.component.html',
 })
 export class BookCardDetailsComponent {
