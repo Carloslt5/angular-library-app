@@ -13,10 +13,10 @@ import { UploadService } from '../../core/services/upload.service';
 })
 export class FormComponent implements OnInit {
   @Input() bookDetails!: Book;
+  @Input() isEditing: boolean = false;
+  @Output() formSubmit = new EventEmitter<Partial<Book>>();
   bookFormData!: FormGroup;
   bookCategories = BOOK_CATEGORY_ARRAY;
-
-  @Output() formSubmit = new EventEmitter<Partial<Book>>();
 
   constructor(private fileService: UploadService) {}
 

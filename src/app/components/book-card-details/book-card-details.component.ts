@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Book, BookID } from '../../interface/book';
 import { RouterLink } from '@angular/router';
+import { Book, BookID } from '../../interface/book';
 
 @Component({
   selector: 'book-card-details',

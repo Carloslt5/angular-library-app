@@ -33,6 +33,6 @@
       <label class="block mb-2 text-sm text-antique-brass-800" for="imageURL">Upload cover</label>
       <input (change)="uploadImg($event)" type="file" class="block w-full text-sm bg-transparent border rounded-md cursor-pointer text-antique-brass-50 border-antique-brass-950 focus:outline-none">
     </div>
-    <button type="submit" class="self-end w-full mt-auto btn-primary ">Create Book</button>
+    <button type="submit" class="self-end w-full mt-auto btn-primary "> {{ isEditing ? 'Edit Book' : 'Create Book' }} </button>
   </article>
 </form>

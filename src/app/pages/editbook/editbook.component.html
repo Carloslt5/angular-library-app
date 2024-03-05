@@ -2,5 +2,5 @@
   <h1 class="mb-6 text-6xl font-bold underline">
     Edit book
   </h1>
-  <form-component (formSubmit)="sendForm($event)" [bookDetails]="bookDetails" />
+  <form-component (formSubmit)="sendForm($event)" [bookDetails]="bookDetails" [isEditing]="isEditing" />
 </main-container>

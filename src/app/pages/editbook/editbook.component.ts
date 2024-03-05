@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class EditbookComponent implements OnInit {
   @Input('id') bookID!: BookID;
   bookDetails!: Book;
-
+  isEditing: boolean = true;
   constructor(private bookServices: BookService, private router: Router) {}
 
   ngOnInit() {
@@ -22,7 +22,6 @@ export class EditbookComponent implements OnInit {
   }
 
   sendForm(bookData: Partial<Book>) {
-    console.log('-----------', bookData);
     this.bookServices.edit(bookData, this.bookID).subscribe((response) => {
       console.log('--------', response);
       this.router.navigate(['/library']);
