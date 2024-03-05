@@ -21,6 +21,10 @@ export class BookService {
     return this.http.post(`${this.baseURL}/create`, bookData);
   }
 
+  edit(bookData: Partial<Book>, bookID: BookID) {
+    return this.http.put(`${this.baseURL}/edit/${bookID}`, bookData);
+  }
+
   deleteByID({ id }: BookID) {
     return this.http.delete(`${this.baseURL}/${id}`);
   }

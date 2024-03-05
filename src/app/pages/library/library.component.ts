@@ -16,9 +16,9 @@ import { Book } from '../../interface/book';
 export class LibraryComponent implements OnInit {
   public bookList$!: Observable<Book[]>;
 
-  constructor(private services: BookService) {}
+  constructor(private bookDervices: BookService) {}
 
   ngOnInit() {
-    this.bookList$! = this.services.getBooksList();
+    this.bookList$! = this.bookDervices.getBooksList();
   }
 }

@@ -22,7 +22,6 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.initializeForm();
-    console.log('--------------', this.bookFormData.value);
   }
 
   private initializeForm() {

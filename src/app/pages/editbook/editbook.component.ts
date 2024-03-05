@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
 import { FormComponent } from '../../components/form/form.component';
-import { Book } from '../../interface/book';
+import { Book, BookID } from '../../interface/book';
+import { BookService } from '../../core/services/book.service';
 
 @Component({
   selector: 'app-editbook',
@@ -10,15 +11,18 @@ import { Book } from '../../interface/book';
   templateUrl: './editbook.component.html',
 })
 export class EditbookComponent implements OnInit {
+  @Input('id') bookID!: BookID;
   bookDetails!: Book;
 
-  constructor() {}
+  constructor(private bookServices: BookService) {}
 
   ngOnInit() {
     this.bookDetails = history.state.book;
   }
 
   sendForm(bookData: Partial<Book>) {
-    console.log('la data enviada', bookData);
+    this.bookServices.edit(bookData, this.bookID).subscribe((response) => {
+      console.log('--------', response);
+    });
   }
 }
