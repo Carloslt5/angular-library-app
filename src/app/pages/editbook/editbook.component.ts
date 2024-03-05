@@ -3,6 +3,7 @@ import { MainContainerComponent } from '../../components/layout/main-container/m
 import { FormComponent } from '../../components/form/form.component';
 import { Book, BookID } from '../../interface/book';
 import { BookService } from '../../core/services/book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editbook',
@@ -14,15 +15,17 @@ export class EditbookComponent implements OnInit {
   @Input('id') bookID!: BookID;
   bookDetails!: Book;
 
-  constructor(private bookServices: BookService) {}
+  constructor(private bookServices: BookService, private router: Router) {}
 
   ngOnInit() {
     this.bookDetails = history.state.book;
   }
 
   sendForm(bookData: Partial<Book>) {
+    console.log('-----------', bookData);
     this.bookServices.edit(bookData, this.bookID).subscribe((response) => {
       console.log('--------', response);
+      this.router.navigate(['/library']);
     });
   }
 }
