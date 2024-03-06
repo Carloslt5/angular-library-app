@@ -2,17 +2,25 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BOOK_CATEGORY_ARRAY } from '../../../constants/categories.constants';
-import { Book } from '../../interface/book';
 import { UploadService } from '../../core/services/upload.service';
+import { Book } from '../../interface/book';
+import { ErrorMessageComponent } from '../error-message/error-message.component';
+import { ErrorMessage } from '../../pages/createbook/createbook.component';
 
 @Component({
   selector: 'form-component',
   standalone: true,
-  imports: [CommonModule, AsyncPipe, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    AsyncPipe,
+    ReactiveFormsModule,
+    ErrorMessageComponent,
+  ],
   templateUrl: './form.component.html',
 })
 export class FormComponent implements OnInit {
   @Input() bookDetails!: Book;
+  @Input() errorMessages!: ErrorMessage[];
   @Input() isEditing: boolean = false;
   @Output() formSubmit = new EventEmitter<Partial<Book>>();
   bookFormData!: FormGroup;

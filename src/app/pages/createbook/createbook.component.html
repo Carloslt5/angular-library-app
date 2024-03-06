@@ -2,11 +2,5 @@
   <h1 class="mb-6 text-6xl font-bold underline">
     Add Book
   </h1>
-  <form-component (formSubmit)="sendForm($event)" />
+  <form-component (formSubmit)="sendForm($event)" [errorMessages]="errorMessages" />
 </main-container>
-
-@if( errorMessages ){
-@for ((error of errorMessages); track $index){
-<p class="text-sm text-red-300 bg-red-600 ">{{error.message}}</p>
-}
-}

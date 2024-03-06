@@ -1,0 +1,5 @@
+@if( errorMessages ){
+@for ((error of errorMessages); track $index){
+<p class="px-2 py-1 mb-1 text-sm text-red-300 bg-red-600 rounded-md">{{error.message}}</p>
+}
+}
