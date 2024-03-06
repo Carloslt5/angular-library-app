@@ -6,6 +6,7 @@ import { BookCardComponent } from '../../components/book-card/book-card.componen
 import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
 import { BookService } from '../../core/services/book.service';
 import { Book } from '../../interface/book';
+import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   selector: 'library-page',
@@ -16,9 +17,17 @@ import { Book } from '../../interface/book';
 export class LibraryComponent implements OnInit {
   public bookList$!: Observable<Book[]>;
 
-  constructor(private bookDervices: BookService) {}
+  constructor(
+    private bookDervices: BookService,
+    private toastServices: ToastService
+  ) {}
 
   ngOnInit() {
     this.bookList$ = this.bookDervices.getBooksList();
+  }
+
+  showToast() {
+    console.log('presionando el boton');
+    this.toastServices.add('Operación completada con éxito.', 'success');
   }
 }
