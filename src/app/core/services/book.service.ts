@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Book, BookID } from '../../interface/book';
+import { catchError, throwError } from 'rxjs';
+import { ErrorMessage } from '../../pages/createbook/createbook.component';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +20,15 @@ export class BookService {
   }
 
   create(bookData: Partial<Book>) {
-    return this.http.post(`${this.baseURL}/create`, bookData);
+    return this.http.post(`${this.baseURL}/create`, bookData).pipe(
+      catchError((error: HttpErrorResponse) => {
+        let errorMessage: ErrorMessage[];
+        if (error instanceof HttpErrorResponse) {
+          errorMessage = error.error;
+        }
+        return throwError(() => errorMessage);
+      })
+    );
   }
 
   edit(bookData: Partial<Book>, bookID: BookID) {

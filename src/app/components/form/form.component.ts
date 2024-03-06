@@ -26,14 +26,14 @@ export class FormComponent implements OnInit {
 
   private initializeForm() {
     const formData = {
-      title: this.bookDetails?.title ?? '',
-      author: this.bookDetails?.author ?? '',
+      title: this.bookDetails?.title ?? 'a',
+      author: this.bookDetails?.author ?? 'a',
       link: this.bookDetails?.link ?? 'https://www.google.com',
       categories: this.bookDetails?.categories ?? '',
       imageURL:
         this.bookDetails?.imageURL ??
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3DlrxkyG-D62QsmOFHoe_pCaaIIVWnItM6NMqtYqTsXNIpdB',
-      year: this.bookDetails?.year ?? '',
+      year: this.bookDetails?.year ?? 12,
     };
 
     this.bookFormData = new FormGroup({

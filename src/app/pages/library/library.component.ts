@@ -19,6 +19,6 @@ export class LibraryComponent implements OnInit {
   constructor(private bookDervices: BookService) {}
 
   ngOnInit() {
-    this.bookList$! = this.bookDervices.getBooksList();
+    this.bookList$ = this.bookDervices.getBooksList();
   }
 }
