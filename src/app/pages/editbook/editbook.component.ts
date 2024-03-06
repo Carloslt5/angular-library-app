@@ -4,6 +4,8 @@ import { FormComponent } from '../../components/form/form.component';
 import { Book, BookID } from '../../interface/book';
 import { BookService } from '../../core/services/book.service';
 import { Router } from '@angular/router';
+import { EMPTY, catchError, tap } from 'rxjs';
+import { ErrorMessage } from '../createbook/createbook.component';
 
 @Component({
   selector: 'app-editbook',
@@ -15,6 +17,7 @@ export class EditbookComponent implements OnInit {
   @Input('id') bookID!: BookID;
   bookDetails!: Book;
   isEditing: boolean = true;
+  errorMessages!: ErrorMessage[];
   constructor(private bookServices: BookService, private router: Router) {}
 
   ngOnInit() {
@@ -22,9 +25,17 @@ export class EditbookComponent implements OnInit {
   }
 
   sendForm(bookData: Partial<Book>) {
-    this.bookServices.edit(bookData, this.bookID).subscribe((response) => {
-      console.log('--------', response);
-      this.router.navigate(['/library']);
-    });
+    this.bookServices
+      .edit(bookData, this.bookID)
+      .pipe(
+        tap(() => {
+          this.router.navigate([`/library/${this.bookID}`]);
+        }),
+        catchError((error: ErrorMessage[]) => {
+          this.errorMessages = error;
+          return EMPTY;
+        })
+      )
+      .subscribe();
   }
 }

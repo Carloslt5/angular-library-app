@@ -4,3 +4,10 @@
   </h1>
   <form-component (formSubmit)="sendForm($event)" [bookDetails]="bookDetails" [isEditing]="isEditing" />
 </main-container>
+
+
+@if( errorMessages ){
+@for ((error of errorMessages); track $index){
+<p class="text-sm text-red-300 bg-red-600 ">{{error.message}}</p>
+}
+}

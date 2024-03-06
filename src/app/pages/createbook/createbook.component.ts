@@ -18,7 +18,7 @@ export interface ErrorMessage {
   templateUrl: './createbook.component.html',
 })
 export class CreatebookComponent {
-  public errorMessages!: ErrorMessage[];
+  errorMessages!: ErrorMessage[];
   constructor(private bookService: BookService, private router: Router) {}
 
   sendForm(bookData: Partial<Book>) {
