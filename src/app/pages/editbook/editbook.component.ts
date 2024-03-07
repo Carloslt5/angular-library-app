@@ -1,11 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
-import { FormComponent } from '../../components/form/form.component';
-import { Book, BookID } from '../../interface/book';
-import { BookService } from '../../core/services/book.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EMPTY, catchError, tap } from 'rxjs';
+import { FormComponent } from '../../components/form/form.component';
+import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
+import { BookService } from '../../core/services/book.service';
+import { Book, BookID } from '../../interface/book';
 import { ErrorMessage } from '../../interface/http-response';
+
+import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   selector: 'app-editbook',
@@ -18,7 +20,11 @@ export class EditbookComponent implements OnInit {
   bookDetails!: Book;
   isEditing: boolean = true;
   errorMessages!: ErrorMessage[];
-  constructor(private bookServices: BookService, private router: Router) {}
+  constructor(
+    private bookServices: BookService,
+    private router: Router,
+    private toastServices: ToastService
+  ) {}
 
   ngOnInit() {
     this.bookDetails = history.state.book;
@@ -28,7 +34,8 @@ export class EditbookComponent implements OnInit {
     this.bookServices
       .edit(bookData, this.bookID)
       .pipe(
-        tap(() => {
+        tap((response) => {
+          this.toastServices.add(response);
           this.router.navigate([`/library/${this.bookID}`]);
         }),
         catchError((error: ErrorMessage[]) => {

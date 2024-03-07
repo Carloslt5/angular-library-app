@@ -23,7 +23,10 @@ export class BookService {
   }
 
   edit(bookData: Partial<Book>, bookID: BookID) {
-    return this.http.put(`${this.baseURL}/edit/${bookID}`, bookData);
+    return this.http.put<APIResponse>(
+      `${this.baseURL}/edit/${bookID}`,
+      bookData
+    );
   }
 
   deleteByID({ id }: BookID) {
