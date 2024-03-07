@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ErrorMessage } from '../../pages/createbook/createbook.component';
+import { ErrorMessage } from '../../interface/http-response';
 
 @Component({
   selector: 'error-message',

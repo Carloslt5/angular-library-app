@@ -5,11 +5,9 @@ import { EMPTY, catchError, tap } from 'rxjs';
 import { FormComponent } from '../../components/form/form.component';
 import { MainContainerComponent } from '../../components/layout/main-container/main-container.component';
 import { BookService } from '../../core/services/book.service';
+import { ToastService } from '../../core/services/toast.service';
 import { Book } from '../../interface/book';
-
-export interface ErrorMessage {
-  message: string;
-}
+import { ErrorMessage } from '../../interface/http-response';
 
 @Component({
   selector: 'create-page',
@@ -19,13 +17,18 @@ export interface ErrorMessage {
 })
 export class CreatebookComponent {
   errorMessages!: ErrorMessage[];
-  constructor(private bookService: BookService, private router: Router) {}
+  constructor(
+    private bookService: BookService,
+    private router: Router,
+    private toastService: ToastService
+  ) {}
 
   sendForm(bookData: Partial<Book>) {
     this.bookService
       .create(bookData)
       .pipe(
-        tap(() => {
+        tap((response) => {
+          this.toastService.add(response);
           this.router.navigate(['/library']);
         }),
         catchError((error: ErrorMessage[]) => {

@@ -1,10 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToastService } from '../../core/services/toast.service';
+import { SuccessResponseAPI } from '../../interface/http-response';
 
-export interface Notification {
-  message: string;
-  type: string;
-}
 @Component({
   selector: 'toast',
   standalone: true,
@@ -12,13 +9,14 @@ export interface Notification {
   templateUrl: './toast.component.html',
 })
 export class ToastComponent implements OnInit {
-  @Input() notification: Notification | null = null;
+  @Input() notification!: SuccessResponseAPI;
 
   constructor(private toastServices: ToastService) {}
   ngOnInit() {
     this.toastServices.notifications$.subscribe((res) => {
-      console.log('Esta es la en toast ', res);
-      this.notification = res;
+      if ('status' in res) {
+        this.notification = res;
+      }
     });
   }
 }

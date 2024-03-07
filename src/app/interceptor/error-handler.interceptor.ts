@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
-import { ErrorMessage } from '../pages/createbook/createbook.component';
+import { ErrorMessage } from '../interface/http-response';
 
 export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(

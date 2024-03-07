@@ -5,7 +5,7 @@ import { Book, BookID } from '../../interface/book';
 import { BookService } from '../../core/services/book.service';
 import { Router } from '@angular/router';
 import { EMPTY, catchError, tap } from 'rxjs';
-import { ErrorMessage } from '../createbook/createbook.component';
+import { ErrorMessage } from '../../interface/http-response';
 
 @Component({
   selector: 'app-editbook',

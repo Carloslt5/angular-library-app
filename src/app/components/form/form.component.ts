@@ -5,7 +5,7 @@ import { BOOK_CATEGORY_ARRAY } from '../../../constants/categories.constants';
 import { UploadService } from '../../core/services/upload.service';
 import { Book } from '../../interface/book';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
-import { ErrorMessage } from '../../pages/createbook/createbook.component';
+import { ErrorMessage } from '../../interface/http-response';
 
 @Component({
   selector: 'form-component',

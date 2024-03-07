@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Book, BookID } from '../../interface/book';
+import { APIResponse } from '../../interface/http-response';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class BookService {
   }
 
   create(bookData: Partial<Book>) {
-    return this.http.post(`${this.baseURL}/create`, bookData);
+    return this.http.post<APIResponse>(`${this.baseURL}/create`, bookData);
   }
 
   edit(bookData: Partial<Book>, bookID: BookID) {
