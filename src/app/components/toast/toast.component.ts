@@ -1,12 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToastService } from '../../core/services/toast.service';
 import { SuccessResponseAPI } from '../../interface/http-response';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'toast',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './toast.component.html',
 })
 export class ToastComponent implements OnInit {
@@ -23,6 +22,7 @@ export class ToastComponent implements OnInit {
       if (res && 'status' in res) {
         this.notification = res;
         this.handleToastColor(res.status);
+        this.autoCloseToast();
       } else {
         this.notification = null;
       }
@@ -31,6 +31,10 @@ export class ToastComponent implements OnInit {
 
   closeToast() {
     this.toastServices.close();
+  }
+
+  autoCloseToast() {
+    setTimeout(() => this.closeToast(), 4000);
   }
 
   handleToastColor(status: boolean) {
