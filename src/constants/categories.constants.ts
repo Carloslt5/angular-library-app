@@ -1,4 +1,6 @@
-export const BOOK_CATEGORY_ARRAY = [
+import { BookCategories } from '../app/interface/book';
+
+export const BOOK_CATEGORY_ARRAY: BookCategories[] = [
   'Adventure',
   'Biography',
   'Classic',
