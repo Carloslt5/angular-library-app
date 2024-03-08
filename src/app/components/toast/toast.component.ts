@@ -11,6 +11,7 @@ import { AsyncPipe } from '@angular/common';
 })
 export class ToastComponent implements OnInit {
   @Input() notification: SuccessResponseAPI | null = null;
+  toastColor!: string;
 
   constructor(private toastServices: ToastService) {}
   ngOnInit() {
@@ -21,6 +22,7 @@ export class ToastComponent implements OnInit {
     this.toastServices.notifications$.subscribe((res) => {
       if (res && 'status' in res) {
         this.notification = res;
+        this.handleToastColor(res.status);
       } else {
         this.notification = null;
       }
@@ -29,5 +31,19 @@ export class ToastComponent implements OnInit {
 
   closeToast() {
     this.toastServices.close();
+  }
+
+  handleToastColor(status: boolean) {
+    switch (status) {
+      case true:
+        this.toastColor = 'bg-success';
+        break;
+      case false:
+        this.toastColor = 'bg-error';
+        break;
+      default:
+        this.toastColor = 'bg-info';
+        break;
+    }
   }
 }
