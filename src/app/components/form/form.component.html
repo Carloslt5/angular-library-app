@@ -6,7 +6,7 @@
   </figure>
   }
 
-  <article class="flex flex-col flex-1 gap-4 p-4">
+  <article class="flex flex-col flex-1 gap-4 p-4 md:overflow-scroll">
     <div class="relative z-0 w-full group">
       <input type="text" formControlName="title" class="form-input peer" placeholder=" " required />
       <label for="title" class="form-label">Title</label>
@@ -16,8 +16,8 @@
       <label for="author" class="form-label">Author</label>
     </div>
     <div class="relative z-0 w-full group">
-      <input type="text" formControlName="description" class="form-input peer" placeholder=" " required />
-      <label for="description" class="form-label">Description</label>
+      <textarea type="text" formControlName="description" class="pb-0  form-input peer max-h-32" placeholder=" " required></textarea>
+      <label for="description" class="form-label ">Description</label>
     </div>
     <div class="relative z-0 w-full group">
       <input type="text" formControlName="link" class="form-input peer" placeholder=" " required />
