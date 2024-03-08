@@ -36,6 +36,7 @@ export class FormComponent implements OnInit {
     const formData = {
       title: this.bookDetails?.title ?? 'a',
       author: this.bookDetails?.author ?? 'a',
+      description: this.bookDetails?.description ?? '',
       link: this.bookDetails?.link ?? 'https://www.google.com',
       categories: this.bookDetails?.categories ?? '',
       imageURL:
@@ -47,6 +48,7 @@ export class FormComponent implements OnInit {
     this.bookFormData = new FormGroup({
       title: new FormControl(formData.title),
       author: new FormControl(formData.author),
+      description: new FormControl(formData.description),
       link: new FormControl(formData.link),
       categories: new FormControl(formData.categories),
       imageURL: new FormControl(formData.imageURL),
