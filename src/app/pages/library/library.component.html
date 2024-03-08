@@ -12,5 +12,22 @@
     </li>
     }
   </ul>
+  } @else {
+  <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+    @for ( x of [1, 2, 3, 4, 5, 6, 7]; track $index){
+    <li>
+      <div class="flex flex-col h-full overflow-hidden bg-gray-500 rounded-md animate-pulse">
+        <figure class="h-[300px] bg-gray-400 overflow-hidden  rounded-b-2xl"></figure>
+        <article class="flex flex-col justify-between flex-1 px-2 py-4">
+          <div class="flex flex-col justify-between flex-1 gap-2">
+            <div class="w-3/4 h-5 mb-8 bg-gray-200 rounded"></div>
+            <div class="w-2/3 h-3 bg-gray-200 rounded"></div>
+          </div>
+          <div class="w-1/2 h-4 mt-2 bg-gray-200 rounded"></div>
+        </article>
+      </div>
+    </li>
+    }
+  </ul>
   }
 </main-container>
