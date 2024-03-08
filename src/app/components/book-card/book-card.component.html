@@ -3,10 +3,10 @@
     <img class="object-cover w-full h-full rounded-b-2xl" src="{{bookDetails.imageURL}}" alt="Book image {{bookDetails.title}}" />
   </figure>
   <article class="flex flex-col items-center justify-between flex-1 px-2 py-4">
-    <div>
-      <h2 class="text-lg font-bold text-center md:text-1xl text-antique-brass-5">{{bookDetails.title}}</h2>
-      <p class="mt-4 text-xs italic text-center text-antique-brass-50">{{bookDetails.categories}}</p>
+    <div class="flex flex-col justify-between flex-1 gap-2">
+      <h2 class="text-lg font-bold text-center md:text-1xl text-antique-brass-50">{{bookDetails.title}}</h2>
+      <p class="text-xs italic text-center text-antique-brass-50">{{bookDetails.categories}}</p>
     </div>
-    <p class="mt-4 text-sm text-center text-antique-brass-950 ">{{bookDetails.author}}</p>
+    <p class="mt-2 text-sm font-bold text-center text-antique-brass-950">{{bookDetails.author}}</p>
   </article>
 </div>
