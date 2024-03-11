@@ -23,6 +23,7 @@ export class FormComponent implements OnInit {
   @Input() errorMessages!: ErrorMessage[];
   @Input() isEditing: boolean = false;
   @Output() formSubmit = new EventEmitter<Partial<Book>>();
+  isUploading = false;
   bookFormData!: FormGroup;
   bookCategories = BOOK_CATEGORY_ARRAY;
 
@@ -60,13 +61,17 @@ export class FormComponent implements OnInit {
     const fileInput = event.target as HTMLInputElement;
     const imagenData = fileInput.files ? fileInput.files[0] : null;
     if (imagenData) {
+      this.isUploading = true;
       const formData = new FormData();
       formData.append('imageData', imagenData);
       this.fileService.uploadImage(formData).subscribe((response) => {
         this.bookFormData.patchValue({
           imageURL: response.publicUrl,
         });
+        this.isUploading = false;
       });
+    } else {
+      this.isUploading = false;
     }
   }
 

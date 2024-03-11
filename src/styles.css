@@ -17,7 +17,11 @@
   }
 
   .btn-primary {
-    @apply px-3 py-2 text-sm font-medium text-white rounded-md bg-antique-brass-700 hover:bg-antique-brass-800;
+    @apply text-sm font-medium text-white bg-antique-brass-700 hover:bg-antique-brass-800;
+  }
+
+  .btn-disabled {
+    @apply text-sm font-medium bg-antique-brass-950 text-antique-brass-700;
   }
 
   .btn-navBar {
