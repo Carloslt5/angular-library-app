@@ -10,28 +10,28 @@ export class BookService {
   constructor(private http: HttpClient) {}
 
   getBooksList() {
-    return this.http.get<Book[]>(environment.apiUrl);
+    return this.http.get<Book[]>(`${environment.apiUrl}/books`);
   }
 
   getbyID(id: BookID) {
-    return this.http.get<Book[]>(`${environment.apiUrl}/${id}`);
+    return this.http.get<Book[]>(`${environment.apiUrl}/books/${id}`);
   }
 
   create(bookData: Partial<Book>) {
     return this.http.post<APIResponse>(
-      `${environment.apiUrl}/create`,
+      `${environment.apiUrl}/books/create`,
       bookData
     );
   }
 
   edit(bookData: Partial<Book>, bookID: BookID) {
     return this.http.put<APIResponse>(
-      `${environment.apiUrl}/edit/${bookID}`,
+      `${environment.apiUrl}/books/edit/${bookID}`,
       bookData
     );
   }
 
   deleteByID({ id }: BookID) {
-    return this.http.delete(`${environment.apiUrl}/${id}`);
+    return this.http.delete(`${environment.apiUrl}/books/${id}`);
   }
 }

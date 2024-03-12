@@ -10,6 +10,9 @@ export class UploadService {
   constructor(private http: HttpClient) {}
 
   uploadImage(imageData: FormData) {
-    return this.http.post<UploadResponse>(environment.apiUrl, imageData);
+    return this.http.post<UploadResponse>(
+      `${environment.apiUrl}/upload`,
+      imageData
+    );
   }
 }
