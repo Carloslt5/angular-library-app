@@ -4,10 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Deploy
 
-<div style="display: flex; gap:4px">
-<img src="https://www.svgrepo.com/show/171728/library.svg" alt="Library App" style="width: 24px; height: 24px;">
- <a>https://angular-library-app.netlify.app</a>
-</div>
+https://angular-library-app.netlify.app
 
 ## Technologies
 
